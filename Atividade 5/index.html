@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background-color: #fff;
+      width: 700px;
+      padding: 35px 40px;
+      border-radius: 10px;
+    }
+ 
+    h1 {
+      text-align: center;
+      color: #ff7a3c;
+      margin-top: 0;
+    }
+
+    .linha {
+      display: flex;
+      gap: 20px;
+    }
+ 
+    .linha > div {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+ 
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ff7a3c;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 13px;
+      background-color: #ff7a3c;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e0632a;
+    }
+
+    @media (max-width: 750px) {
+      form {
+        width: 90%;
+      }
+      .linha {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <form class="form-card" action="#" method="post">
+    <h1>Cadastro</h1>
+    <p class="subtitulo">Preencha seus dados para criar uma conta</p>
+
+    <div class="grid">
+      <!-- Nome -->
+      <div class="campo full">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+      </div>
+
+      <!-- E-mail -->
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+      </div>
+
+      <!-- Senha -->
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+      </div>
+
+      <!-- Data de nascimento -->
+      <div class="campo">
+        <label for="nascimento">Data de nascimento</label>
+        <input type="date" id="nascimento" name="nascimento">
+      </div>
+
+      <!-- Curso -->
+      <div class="campo">
+        <label for="curso">Curso</label>
+        <select id="curso" name="curso">
+          <option value="">Selecione...</option>
+          <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+          <option value="cc">Ciência da Computação</option>
+          <option value="es">Engenharia de Software</option>
+          <option value="redes">Redes de Computadores</option>
+          <option value="design">Design Digital</option>
+        </select>
+      </div>
+
+      <!-- Sexo -->
+      <div class="campo full">
+        <label>Sexo</label>
+        <div class="opcoes">
+          <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+          <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+          <label><input type="radio" name="sexo" value="outro"> Outro</label>
+          <label><input type="radio" name="sexo" value="na"> Prefiro não dizer</label>
+        </div>
+      </div>
+
+      <!-- Interesses -->
+      <div class="campo full">
+        <label>Interesses</label>
+        <div class="opcoes">
+          <label><input type="checkbox" name="interesses" value="front"> Front-end</label>
+          <label><input type="checkbox" name="interesses" value="back"> Back-end</label>
+          <label><input type="checkbox" name="interesses" value="mobile"> Mobile</label>
+          <label><input type="checkbox" name="interesses" value="dados"> Dados / IA</label>
+          <label><input type="checkbox" name="interesses" value="design"> Design</label>
+        </div>
+      </div>
+
+      <!-- Comentários -->
+      <div class="campo full">
+        <label for="comentarios">Comentários</label>
+        <textarea id="comentarios" name="comentarios" placeholder="Escreva uma mensagem..."></textarea>
+      </div>
+
+      <!-- Upload de foto -->
+      <div class="campo full">
+        <label for="foto">Upload de foto</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <div class="botoes">
+      <button type="reset" class="btn-limpar">Limpar</button>
+      <button type="submit" class="btn-enviar">Enviar cadastro</button>
+    </div>
+  </form>
+</body>
+</html>
